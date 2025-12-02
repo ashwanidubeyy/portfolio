@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Layout, Menu, Button, Drawer, theme } from "antd";
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { Layout, Menu, theme } from "antd";
 import { motion } from "framer-motion";
 
 const { Header } = Layout;
@@ -20,7 +19,6 @@ const navItems = [
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const { token } = theme.useToken();
@@ -72,7 +70,6 @@ export default function Navigation() {
     }
 
     setActiveSection(id);
-    setMobileMenuOpen(false);
   };
 
   return (
@@ -132,7 +129,7 @@ export default function Navigation() {
             style={{
               border: "none",
               background: "transparent",
-              display: !isMobile ? "flex" : "none",
+              display: "flex",
               minWidth: 0,
               flex: 1,
               justifyContent: "flex-end",
@@ -156,50 +153,8 @@ export default function Navigation() {
               ),
             }))}
           />
-
-          <Button
-            type="text"
-            icon={<MenuOutlined />}
-            onClick={() => setMobileMenuOpen(true)}
-            style={{
-              display: isMobile ? "block" : "none",
-              fontSize: "20px",
-            }}
-          />
         </div>
       </Header>
-
-      <Drawer
-        title="Menu"
-        placement="right"
-        onClose={() => setMobileMenuOpen(false)}
-        open={mobileMenuOpen}
-        closeIcon={<CloseOutlined />}
-        zIndex={1300}
-      >
-        <Menu
-          mode="vertical"
-          selectedKeys={[activeSection]}
-          items={navItems.map((item) => ({
-            key: item.key,
-            label: (
-              <a
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-                style={{
-                  color: activeSection === item.key ? "#3E78B2" : "inherit",
-                  fontWeight: activeSection === item.key ? "600" : "normal",
-                }}
-              >
-                {item.label}
-              </a>
-            ),
-          }))}
-        />
-      </Drawer>
     </>
   );
 }

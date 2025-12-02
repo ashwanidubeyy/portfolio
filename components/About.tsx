@@ -44,7 +44,8 @@ export default function About() {
     <section
       id="about"
       style={{
-        background: "linear-gradient(180deg, #07070A 0%, #24272B 50%, #07070A 100%)",
+        background:
+          "linear-gradient(180deg, #07070A 0%, #24272B 50%, #07070A 100%)",
         position: "relative",
       }}
     >
@@ -85,21 +86,32 @@ export default function About() {
                 border: "1px solid rgba(74, 82, 90, 0.5)",
               }}
             >
-              <Title level={3} style={{ marginBottom: "20px", color: "#ffffff" }}>
+              <Title
+                level={3}
+                style={{ marginBottom: "20px", color: "#ffffff" }}
+              >
                 Professional Summary
               </Title>
-              <Paragraph style={{ fontSize: "16px", lineHeight: 1.8, color: "#ffffff" }}>
+              <Paragraph
+                style={{ fontSize: "16px", lineHeight: 1.8, color: "#ffffff" }}
+              >
                 Results-driven Software Engineer with 2+ years of proven
                 experience architecting and developing high-performance,
                 scalable web applications using React.js, Next.js, and
                 TypeScript. Specialized in building responsive user interfaces,
                 optimizing application performance, and implementing debugging
-                solutions that achieve <strong style={{ color: "#3E78B2" }}>95% bug resolution rate</strong>.
-                Demonstrated track record of impacting{" "}
-                <strong style={{ color: "#3E78B2" }}>90% user base</strong> across multiple projects while
-                reducing load times by <strong style={{ color: "#3E78B2" }}>20%</strong>.
+                solutions that achieve{" "}
+                <strong style={{ color: "#3E78B2" }}>
+                  95% bug resolution rate
+                </strong>
+                . Demonstrated track record of impacting{" "}
+                <strong style={{ color: "#3E78B2" }}>90% user base</strong>{" "}
+                across multiple projects while reducing load times by{" "}
+                <strong style={{ color: "#3E78B2" }}>20%</strong>.
               </Paragraph>
-              <Paragraph style={{ fontSize: "16px", lineHeight: 1.8, color: "#ffffff" }}>
+              <Paragraph
+                style={{ fontSize: "16px", lineHeight: 1.8, color: "#ffffff" }}
+              >
                 I approach design through grids, flows, and moments of delight,
                 creating experiences that are simple, human, and thoughtfully
                 crafted. My work reflects a balance of clarity, usability, and
@@ -128,7 +140,10 @@ export default function About() {
                 border: "1px solid rgba(74, 82, 90, 0.5)",
               }}
             >
-              <Title level={3} style={{ marginBottom: "30px", color: "#ffffff" }}>
+              <Title
+                level={3}
+                style={{ marginBottom: "30px", color: "#ffffff" }}
+              >
                 Key Achievements
               </Title>
               <Row gutter={[16, 24]} justify="center" align="stretch">
@@ -167,7 +182,7 @@ export default function About() {
                           }
                           suffix={stat.suffix}
                           valueStyle={{ color: stat.color, fontWeight: "bold" }}
-                          titleStyle={{ color: "#ffffff" }}
+                          // titleStyle={{ color: "#ffffff" }}
                         />
                       </Card>
                     </motion.div>
@@ -181,4 +196,3 @@ export default function About() {
     </section>
   );
 }
-
