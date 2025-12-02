@@ -27,10 +27,10 @@ const projects = [
       "Improved mobile engagement by 25% and reduced page load times by 20% through code-splitting, lazy loading, and web performance tools",
     ],
     technologies: [
-      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Next.js", icon: SiNextdotjs },
       { name: "Material UI", icon: null },
-      { name: "React", icon: <SiReact /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "React", icon: SiReact },
+      { name: "TypeScript", icon: SiTypescript },
       { name: "RBAC", icon: null },
     ],
     color: "#3E78B2",
@@ -46,10 +46,10 @@ const projects = [
       "Built a reusable component library with 20+ custom components using Ant Design",
     ],
     technologies: [
-      { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "React 18", icon: <SiReact /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "Chart.js", icon: <SiChartdotjs /> },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "React 18", icon: SiReact },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Chart.js", icon: SiChartdotjs },
       { name: "Ant Design", icon: null },
     ],
     color: "#004BA8",
@@ -65,11 +65,11 @@ const projects = [
       "Incorporated social login features",
     ],
     technologies: [
-      { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "Socket.io", icon: <SiSocketdotio /> },
-      { name: "React", icon: <SiReact /> },
-      { name: "REST API", icon: <ApiOutlined /> },
-      { name: "Social Login", icon: <UserOutlined /> },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Socket.io", icon: SiSocketdotio },
+      { name: "React", icon: SiReact },
+      { name: "REST API", icon: ApiOutlined },
+      { name: "Social Login", icon: UserOutlined },
       { name: "Ant Design", icon: null },
     ],
     color: "#3E78B2",
@@ -84,10 +84,10 @@ const projects = [
       "Collaborated with product and design teams to ensure scalable integration of REST APIs",
     ],
     technologies: [
-      { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "React", icon: <SiReact /> },
-      { name: "REST API", icon: <ApiOutlined /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "React", icon: SiReact },
+      { name: "REST API", icon: ApiOutlined },
+      { name: "TypeScript", icon: SiTypescript },
       { name: "Material UI", icon: null },
     ],
     color: "#004BA8",
@@ -235,7 +235,7 @@ export default function Projects() {
                       {project.technologies.map((tech, techIndex) => {
                         const techName =
                           typeof tech === "string" ? tech : tech.name;
-                        const techIcon =
+                        const IconComponent =
                           typeof tech === "object" ? tech.icon : null;
                         return (
                           <Tag
@@ -250,7 +250,7 @@ export default function Projects() {
                               gap: "6px",
                             }}
                           >
-                            {techIcon && (
+                            {IconComponent && (
                               <span
                                 style={{
                                   fontSize: "14px",
@@ -258,7 +258,7 @@ export default function Projects() {
                                   alignItems: "center",
                                 }}
                               >
-                                {techIcon}
+                                <IconComponent />
                               </span>
                             )}
                             {techName}
