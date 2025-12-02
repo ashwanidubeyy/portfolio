@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3E78B2;
+  --secondary-color: #004BA8;
+  --text-primary: #ffffff;
+  --text-secondary: #4A525A;
+  --bg-primary: #07070A;
+  --bg-secondary: #24272B;
+  --bg-tertiary: #4A525A;
+  --bg-gradient-1: linear-gradient(135deg, #004BA8 0%, #3E78B2 100%);
+  --bg-gradient-2: linear-gradient(135deg, #24272B 0%, #4A525A 100%);
+  --bg-gradient-3: linear-gradient(135deg, #07070A 0%, #24272B 100%);
+  --border-color: #4A525A;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 12px 40px rgba(62, 120, 178, 0.3);
+  --card-bg: rgba(36, 39, 43, 0.95);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #07070A;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='6' fill='%233E78B2' filter='url(%23glow)'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%233E78B2' stroke-width='2' opacity='0.6'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ffffff'/%3E%3C/svg%3E") 16 16, auto;
+}
+
+#__next {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Background patterns */
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(62, 120, 178, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 75, 168, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1400px) {
+  section {
+    max-width: 1400px;
+    padding: 100px 32px;
+  }
+}
+
+@media (max-width: 1200px) {
+  section {
+    max-width: 100%;
+    padding: 80px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 16px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #3E78B2, #004BA8);
+  border-radius: 10px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #004BA8, #3E78B2);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Disable text selection */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Allow text selection only for input fields and textareas */
+input,
+textarea,
+[contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  cursor: text;
+}
+
+/* Modern cursor for interactive elements */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+.Tag,
+.ant-tag,
+.ant-btn,
+.ant-card-hoverable {
+  cursor: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='3' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%233E78B2;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23004BA8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='20' cy='20' r='8' fill='url(%23grad)' filter='url(%23glow)'/%3E%3Ccircle cx='20' cy='20' r='12' fill='none' stroke='url(%23grad)' stroke-width='2' opacity='0.7'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23ffffff'/%3E%3Cpath d='M20 8 L20 4 M20 36 L20 32 M8 20 L4 20 M36 20 L32 20' stroke='url(%23grad)' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E") 20 20, pointer;
+}
+
+/* Hover effects for interactive elements */
+a:hover,
+button:hover,
+[role="button"]:hover,
+.ant-btn:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* Smooth scroll with momentum */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom focus styles */
+*:focus {
+  outline: 2px solid rgba(62, 120, 178, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth animations for all elements */
+* {
+  will-change: transform;
+}
+
+/* Interactive card hover effects */
+.ant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(62, 120, 178, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button hover effects */
+.ant-btn-primary:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Link hover effects */
+a:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Tag hover effects - removed */
+
+/* Smooth scroll reveal animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Interactive input focus */
+input:focus,
+textarea:focus {
+  border-color: #3E78B2 !important;
+  box-shadow: 0 0 0 2px rgba(62, 120, 178, 0.2) !important;
+  transition: all 0.3s ease;
+}
+
+/* Smooth page transitions */
+section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Enhanced scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #3E78B2, #004BA8);
+  border-radius: 10px;
+  border: 2px solid var(--bg-primary);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #004BA8, #3E78B2);
+}
+
